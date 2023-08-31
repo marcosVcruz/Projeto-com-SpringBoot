@@ -1,7 +1,6 @@
 package com.marcosVcruz.cursoSpringBoot.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.marcosVcruz.cursoSpringBoot.repositories.OrderItemRepository;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
