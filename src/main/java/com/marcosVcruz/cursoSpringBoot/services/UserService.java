@@ -2,6 +2,7 @@ package com.marcosVcruz.cursoSpringBoot.services;
 
 import com.marcosVcruz.cursoSpringBoot.entities.User;
 import com.marcosVcruz.cursoSpringBoot.repositories.UserRepository;
+import com.marcosVcruz.cursoSpringBoot.services.exceptions.ResourceFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,7 @@ public class UserService {
 
     public User findById(Long id){
         Optional<User> obj = repository.findById(id);
-        return obj.get();
+        return obj.orElseThrow(() -> new ResourceFoundException(id));
     }
 
     public User insert(User obj){
